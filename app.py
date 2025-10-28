@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template, jsonify
 import pickle
 from nltk.stem import SnowballStemmer
+import nltk
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import string
