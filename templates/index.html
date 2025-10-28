@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analyzer</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+            text-align: center;
+            background: #1D242E;
+        }
+        .logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem;
+        }
+        .logo img{
+            width: 150px;
+            height: auto;
+            
+        }
+
+        input,
+        textarea {
+            width: 60%;
+            height: 250px;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            background: #645e5654;
+            color: black;
+            font-size: 24px;
+        }
+        input::placeholder,
+        textarea::placeholder {
+            color: rgb(144, 137, 137);
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 2px solid black;
+            background-color: rgb(255, 183, 1);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 15px;
+            
+        }
+        button:hover {
+            background :black;
+            color: rgb(255, 183, 0);
+            border: 1px solid rgb(255, 183, 0);
+            cursor: pointer;
+        }
+        h1{
+            color: #FFFFFF;
+        }
+        h2 > span {
+            color: darkturquoise;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="https://cdn.freebiesupply.com/images/large/2x/amazon-logo-black-transparent.png" alt="Logo">
+    </div>
+    <h1>Review Sentiment Analyzer</h1>
+    <form action="/predict" method="post">
+        <textarea name="review" rows="5" placeholder="Enter your review here..."></textarea><br>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if sentiment %}
+    <h2>Prediction: <span>
+
+        {{ sentiment }}
+    </span>
+</h2>
+    {% endif %}
+</body>
+
+</html>
